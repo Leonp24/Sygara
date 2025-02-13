@@ -105,7 +105,7 @@ const RegisterPage = () => {
                         </Col>
 
                         <Col>
-                            <img src={imgRegister} alt="image" />
+                            <img src={imgRegister} alt="image" className='img-register' />
                         </Col>
                     </Row>
                 </Container>

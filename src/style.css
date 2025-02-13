@@ -10,6 +10,7 @@ h1 {
     font-size: 40px;
     font-weight: 900;
 }
+
 h3 {
     font-size: 32px;
     font-weight: 900;
@@ -90,7 +91,7 @@ h3 {
     width: 120px;
 }
 
-.login img {
+.login .img-login {
     width: 100%;
 }
 
@@ -112,7 +113,7 @@ h3 {
     width: 120px;
 }
 
-.register img {
+.register .img-register {
     width: 100%;
 }
 
@@ -142,4 +143,104 @@ h3 {
     border-radius: 50px;
 }
 
+/* cart */
+.cart .btn-success {
+    padding: 10px 30px;
+}
 
+.cart .card img {
+    width: 100%;
+}
+
+.cart .img-empty-cart {
+    width: 50%;
+}
+
+/* order */
+.order .btn {
+    padding: 10px 30px;
+    border-radius: 50px;
+}
+
+.order .card img {
+    width: 100%;
+}
+
+/* payment */
+.payment .btn {
+    padding: 10px 30px;
+}
+
+.payment .img-payment {
+    width: 100%;
+}
+
+/* success */
+.success .btn {
+    padding: 10px 30px;
+}
+
+.success .img-success {
+    width: 50%;
+}
+
+
+/* mobile style */
+@media (max-width: 768px) {
+    .navbar .vr {
+        display: none;
+    }
+
+    .hero .banner1 {
+        height: 35vh;
+    }
+
+    .hero .banner2 {
+        height: 35vh;
+        margin-top: 30px;
+    }
+
+    .hero .bg-text {
+        height: 300px;
+    }
+
+    .hero .banner3 img {
+        display: none;
+    }
+
+    .hero .cta {
+        height: 30vh;
+    }
+
+    .hero .cta h1 {
+        font-size: 20px;
+    }
+
+    .login .img-login {
+        display: none;
+    }
+
+    .register .img-register {
+        display: none;
+    }
+
+    .product .btn {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .modal .btn {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .cart .img-empty-cart {
+        width: 100%;
+    }
+
+    .success .img-success {
+        width: 100%;
+    }
+}

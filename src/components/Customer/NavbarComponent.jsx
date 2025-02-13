@@ -9,7 +9,7 @@ const NavbarComponent = ({ isLoggedIn }) => {
     return (
         <Navbar expand="lg" className="mb-3">
             <Container>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="/">
                     <img src={logo} alt="Logo" />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />

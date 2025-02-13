@@ -48,7 +48,7 @@ const LoginPage = () => {
                         </Col>
 
                         <Col>
-                            <img src={imgLogin} alt="image" />
+                            <img src={imgLogin} alt="image" className='img-login' />
                         </Col>
                     </Row>
                 </Container>
