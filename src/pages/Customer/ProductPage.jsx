@@ -4,6 +4,12 @@ import FooterComponent from '../../components/Customer/FooterComponent';
 import { Container, Row, Col, Form, Button, Card, Modal } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
+import imgPisang from '../../assets/img-pisang.png';
+import imgJeruk from '../../assets/img-jeruk.png';
+import imgApel from '../../assets/img-apel.png';
+import imgSemangka from '../../assets/img-semangka.png';
+
+
 const ProductPage = () => {
     const [showModal, setShowModal] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -24,10 +30,10 @@ const ProductPage = () => {
     };
 
     const products = [
-        { title: 'Pisang Cavendish', price: 'Rp 15.000/kg', img: '/assets/img-pisang.png' },
-        { title: 'Jeruk Sunkist', price: 'Rp 10.000/kg', img: '/assets/img-jeruk.png' },
-        { title: 'Apel Fuji', price: 'Rp 25.000/kg', img: '/assets/img-apel.png' },
-        { title: 'Semangka', price: 'Rp 15.000/kg', img: '/assets/img-semangka.png' }
+        { title: 'Pisang Cavendish', price: 'Rp 15.000/kg', img: imgPisang },
+        { title: 'Jeruk Sunkist', price: 'Rp 10.000/kg', img: imgJeruk },
+        { title: 'Apel Fuji', price: 'Rp 25.000/kg', img: imgApel },
+        { title: 'Semangka', price: 'Rp 15.000/kg', img: imgSemangka },
     ];
 
     const handleSubmit = (event) => {
