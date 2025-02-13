@@ -8,6 +8,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
+import imgProduct from '../../assets/img-semangka.png'
 import imgEmptyCart from '../../assets/img-empty-cart.png'
 
 const CartPage = () => {
@@ -46,7 +47,7 @@ const CartPage = () => {
                                 <Card className="mb-3 rounded-5">
                                     <Row className="g-0  d-flex align-items-center">
                                         <Col md={4}>
-                                            <img src="../../src/assets/img-semangka.png" className="img-fluid rounded-5 border" alt="..." />
+                                            <img src={imgProduct} className="img-fluid rounded-5 border" alt="..." />
                                         </Col>
                                         <Col md={8}>
                                             <Card.Body className='p-4'>
