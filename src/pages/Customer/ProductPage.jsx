@@ -1,39 +1,34 @@
-import { useState } from 'react'
-
-import NavbarComponent from '../../components/Customer/NavbarComponent'
-import FooterComponent from '../../components/Customer/FooterComponent'
-
-import { Container, Row, Col, Form, Button, Card, Modal } from 'react-bootstrap'
-import Swal from 'sweetalert2'
+import { useState } from 'react';
+import NavbarComponent from '../../components/Customer/NavbarComponent';
+import FooterComponent from '../../components/Customer/FooterComponent';
+import { Container, Row, Col, Form, Button, Card, Modal } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 
 const ProductPage = () => {
-    const [showModal, setShowModal] = useState(false)
-    const [selectedProduct, setSelectedProduct] = useState(null)
-
-    const [jumlah, setJumlah] = useState(1)
+    const [showModal, setShowModal] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [jumlah, setJumlah] = useState(1);
 
     const handleJumlahChange = (e) => {
-        setJumlah(e.target.value)
-    }
+        setJumlah(e.target.value);
+    };
 
     const handleCardClick = (product) => {
-        setSelectedProduct(product)
-        setShowModal(true)
-    }
+        setSelectedProduct(product);
+        setShowModal(true);
+    };
 
     const handleCloseModal = () => {
-        setShowModal(false)
-        setSelectedProduct(null)
-    }
+        setShowModal(false);
+        setSelectedProduct(null);
+    };
 
     const products = [
-        { title: 'Pisang Cavendish', price: 'Rp 15.000/kg', img: '/public/assets/img-pisang.png' },
-        { title: 'Jeruk Sunkist', price: 'Rp 10.000/kg', img: '/public/assets/img-jeruk.png' },
-        { title: 'Apel Fuji', price: 'Rp 25.000/kg', img: '/public/assets/img-apel.png' },
-        { title: 'Semangka', price: 'Rp 15.000/kg', img: '/public/assets/img-semangka.png' }
+        { title: 'Pisang Cavendish', price: 'Rp 15.000/kg', img: '/assets/img-pisang.png' },
+        { title: 'Jeruk Sunkist', price: 'Rp 10.000/kg', img: '/assets/img-jeruk.png' },
+        { title: 'Apel Fuji', price: 'Rp 25.000/kg', img: '/assets/img-apel.png' },
+        { title: 'Semangka', price: 'Rp 15.000/kg', img: '/assets/img-semangka.png' }
     ];
-    
-
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -134,14 +129,14 @@ const ProductPage = () => {
                             </Col>
 
                             <Col lg={6} className='d-flex justify-content-end'>
-                                <Button type="submit" variant='success' onClick={handleSubmit}>+Keranjang</Button>
+                                <Button type="submit" variant='success'  onClick={handleSubmit}>+Keranjang</Button>
                             </Col>
                         </Row>
                     </Form>
                 </Modal.Footer>
             </Modal>
         </>
-    )
-}
+    );
+};
 
-export default ProductPage
+export default ProductPage;
