@@ -7,6 +7,7 @@ import NavbarComponent from '../../components/Customer/NavbarComponent'
 import FooterComponent from '../../components/Customer/FooterComponent'
 
 import imgSuccess from '../../assets/img-success.png'
+import imgMethod from '../../assets/ic-bca.png'
 
 const SuccessPage = () => {
     return (
@@ -23,7 +24,7 @@ const SuccessPage = () => {
                                 <Card.Body>
                                     <Row className='align-items-center'>
                                         <Col md={4}>
-                                            <img src="../../src/assets/ic-bca.png" alt="bca" className='img-fluid' />
+                                            <img src={imgMethod} alt="bca" className='img-fluid' />
                                         </Col>
                                         <Col md={8}>
                                             <h5>Pembayaran via Transfer ke Bank BCA </h5>

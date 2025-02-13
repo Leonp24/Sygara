@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 
+import imgProduct from '../../assets/img-semangka.png'
+
 const OrderPage = () => {
     const handleBuyClick = () => {
         window.location.href = '/payment';
@@ -83,7 +85,7 @@ const OrderPage = () => {
 
                                     <Row className='mb-3 d-flex align-items-center'>
                                         <Col lg={2}>
-                                            <img src="../../src/assets/img-semangka.png" className='img-product border rounded-5 mb-3' alt="" />
+                                            <img src={imgProduct} className='img-product border rounded-5 mb-3' alt="" />
                                         </Col>
                                         <Col lg={10} className='d-flex justify-content-between'>
                                             <h5>Semangka</h5>
