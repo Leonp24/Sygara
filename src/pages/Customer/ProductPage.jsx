@@ -27,11 +27,13 @@ const ProductPage = () => {
     }
 
     const products = [
-        { title: 'Pisang Cavendish', price: 'Rp 15.000/kg', img: '../../src/assets/img-pisang.png' },
-        { title: 'Jeruk Sunkist', price: 'Rp 10.000/kg', img: '../../src/assets/img-jeruk.png' },
-        { title: 'Apel Fuji', price: 'Rp 25.000/kg', img: '../../src/assets/img-apel.png' },
-        { title: 'Semangka', price: 'Rp 15.000/kg', img: '../../src/assets/img-semangka.png' }
-    ]
+        { title: 'Pisang Cavendish', price: 'Rp 15.000/kg', img: '/public/assets/img-pisang.png' },
+        { title: 'Jeruk Sunkist', price: 'Rp 10.000/kg', img: '/public/assets/img-jeruk.png' },
+        { title: 'Apel Fuji', price: 'Rp 25.000/kg', img: '/public/assets/img-apel.png' },
+        { title: 'Semangka', price: 'Rp 15.000/kg', img: '/public/assets/img-semangka.png' }
+    ];
+    
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -44,14 +46,14 @@ const ProductPage = () => {
             showCancelButton: true,
             cancelButtonText: 'Lanjut Belanja',
             customClass: {
-            confirmButton: 'rounded-pill',
-            cancelButton: 'rounded-pill'
+                confirmButton: 'rounded-pill',
+                cancelButton: 'rounded-pill'
             },
         }).then((result) => {
             if (result.isConfirmed) {
-            window.location.href = '/cart';
+                window.location.href = '/cart';
             } else {
-            handleCloseModal();
+                handleCloseModal();
             }
         });
     };
@@ -132,7 +134,7 @@ const ProductPage = () => {
                             </Col>
 
                             <Col lg={6} className='d-flex justify-content-end'>
-                                <Button type="submit" variant='success'  onClick={handleSubmit}>+Keranjang</Button>
+                                <Button type="submit" variant='success' onClick={handleSubmit}>+Keranjang</Button>
                             </Col>
                         </Row>
                     </Form>
