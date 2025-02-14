@@ -29,7 +29,7 @@ const SuccessPage = () => {
                                         <Col md={8}>
                                             <h5>Pembayaran via Transfer ke Bank BCA </h5>
                                             <p>Nomor Rekening : <b>612009820028</b> (a.n Sygara)</p>
-                                            <p>Total Pembayaran : <b>Rp 60.000</b></p>
+                                            <p>Total Pembayaran : <b>Rp 25.000</b></p>
                                         </Col>
                                     </Row>
                                 </Card.Body>

@@ -83,9 +83,8 @@ const CartPage = () => {
                                 <Card className="mb-3 rounded-5">
                                     <Card.Body className='p-4'>
                                         <h3>Ringkasan Belanja</h3>
-                                        <h6>Total Item : 2</h6>
-                                        <h6>Berat Total : 2kg</h6>
-                                        <h6>Sub Total : Rp 40.000</h6>
+                                        <h6>Berat Total : 1kg</h6>
+                                        <h6>Sub Total : Rp 15.000</h6>
 
                                         <Button variant="success" className="w-100 mt-3 rounded-5" onClick={handleBuyClick}>Beli</Button>
                                     </Card.Body>

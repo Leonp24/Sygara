@@ -88,7 +88,7 @@ const ProductPage = () => {
                     </Row>
 
                     {/* product */}
-                    <Row className='mt-3'>
+                    <Row className='all-product mt-3'>
                         {products.map((product, index) => (
                             <Col lg={3} className='mb-3' key={index}>
                                 <Card className='text-center rounded-5' onClick={() => handleCardClick(product)}>
