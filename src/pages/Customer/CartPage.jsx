@@ -1,24 +1,24 @@
-import { useState } from 'react'
-import NavbarComponent from '../../components/Customer/NavbarComponent'
-import FooterComponent from '../../components/Customer/FooterComponent'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import FooterComponent from "../../components/Customer/FooterComponent";
+import NavbarComponent from "../../components/Customer/NavbarComponent";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 
-import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-import imgProduct from '../../assets/img-semangka.png'
-import imgEmptyCart from '../../assets/img-empty-cart.png'
+import imgEmptyCart from '../../assets/img-empty-cart.png';
+import imgProduct from '../../assets/img-semangka.png';
 
 const CartPage = () => {
-    const [jumlah, setJumlah] = useState(1);
+    // fungsi jika keranjang kosong
+    const [isCartEmpty, setIsCartEmpty] = useState(false);
 
+    const [jumlah, setJumlah] = useState(1);
     const handleJumlahChange = (e) => {
         setJumlah(e.target.value);
     }
-
-    const [isCartEmpty, setIsCartEmpty] = useState(false);
 
     const handleRemoveItem = () => {
         setIsCartEmpty(true);
@@ -28,44 +28,48 @@ const CartPage = () => {
         window.location.href = '/order';
     }
 
+
     return (
         <>
             <NavbarComponent isLoggedIn={true} />
 
             <section className="cart">
                 <Container>
-                    <h2 className='text-success mb-3'>Keranjang Belanja</h2>
+                    <h2 className="text-success mb-3">Keranjang Belanja</h2>
+
                     {isCartEmpty ? (
                         <div className="text-center mt-5 mb-5">
-                            <h4>Keranjang masih kosong :(, <Link to='/product' className='text-success'>Ayo Belanja sekarang!</Link></h4>
-                            <img src={imgEmptyCart} alt="empty" className='img-empty-cart' />
+                            <h4>Keranjang masih kosong :(, <Link to="/product" className="text-success">Ayo Belanja Sekarang!</Link></h4>
+                            <img src={imgEmptyCart} alt="" width="50%" />
                             <FooterComponent />
                         </div>
                     ) : (
                         <Row>
                             <Col lg={6}>
                                 <Card className="mb-3 rounded-5">
-                                    <Row className="g-0  d-flex align-items-center">
+                                    <Row>
                                         <Col md={4}>
-                                            <img src={imgProduct} className="img-fluid rounded-5 border" alt="..." />
+                                            <img src={imgProduct} alt="" className="img-fluid rounded-5 border" />
                                         </Col>
+
                                         <Col md={8}>
-                                            <Card.Body className='p-4'>
+                                            <Card.Body className="p-4">
                                                 <Row>
                                                     <Col>
                                                         <h5 className="card-title">Semangka</h5>
                                                     </Col>
 
                                                     <Col className="d-flex justify-content-end">
-                                                        <h5 className='text-success'>Rp 15.000</h5>
+                                                        <h5 className="text-success">Rp. 15.000</h5>
                                                     </Col>
                                                 </Row>
+
                                                 <Row>
                                                     <Col lg={8}>
-                                                        <Form className='w-100 mt-3'>
+                                                        <Form className="w-100 mt-3">
                                                             <Form.Group className="mb-3">
                                                                 <Form.Label>Jumlah/kg</Form.Label>
-                                                                <Form.Control type="number" value={jumlah} min={1} max={10} onChange={handleJumlahChange} />
+                                                                <Form.Control type="number" max={10} min={1} onChange={handleJumlahChange} value={jumlah} />
                                                             </Form.Group>
                                                         </Form>
                                                     </Col>
@@ -79,12 +83,13 @@ const CartPage = () => {
                                     </Row>
                                 </Card>
                             </Col>
+
                             <Col lg={6}>
                                 <Card className="mb-3 rounded-5">
-                                    <Card.Body className='p-4'>
+                                    <Card.Body className="p-4">
                                         <h3>Ringkasan Belanja</h3>
                                         <h6>Berat Total : 1kg</h6>
-                                        <h6>Sub Total : Rp 15.000</h6>
+                                        <h6>Sub total : Rp 15.000</h6>
 
                                         <Button variant="success" className="w-100 mt-3 rounded-5" onClick={handleBuyClick}>Beli</Button>
                                     </Card.Body>
@@ -94,8 +99,9 @@ const CartPage = () => {
                     )}
                 </Container>
             </section>
+
         </>
-    )
+    );
 }
 
 export default CartPage

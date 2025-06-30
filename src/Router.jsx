@@ -9,6 +9,7 @@ import CartPage from './pages/Customer/CartPage';
 import OrderPage from './pages/Customer/OrderPage';
 import PaymentPage from './pages/Customer/PaymentPage';
 import SuccessPage from './pages/Customer/SuccessPage';
+import HistoryPage from './pages/Customer/HistoryPage';
 
 function Router() {
   return (
@@ -23,6 +24,7 @@ function Router() {
         <Route path="/order" element={<OrderPage />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/success" element={<SuccessPage />} />
+        <Route path="/history" element={<HistoryPage />} />
       </Routes>
     </>
   )
