@@ -31,7 +31,7 @@ const LandingPage = () => {
 
                         <Col lg={4}>
                             <div className="banner2">
-                                <div className="description">
+                                <div className="description text-center">
                                     <h3 className="text-success">Produk segar langsung dari kebun!</h3>
                                     <Link to='/product' className="btn btn-outline-success">Lihat Produk</Link>
                                 </div>
@@ -51,7 +51,7 @@ const LandingPage = () => {
                         </Col>
 
                         <Col lg={7}>
-                            <img src={banner3} alt="" width="100%" className="banner3" />
+                            <img src={banner3} alt="" width="100%" className="banner3 rounded-5" />
                         </Col>
                     </Row>
 

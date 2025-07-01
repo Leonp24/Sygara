@@ -24,7 +24,7 @@ const NavbarComponent = ({ isLoggedIn }) => {
                             {/* kondisi jika sudah/belum login */}
                             {isLoggedIn ? (
                                     <>
-                                        <Nav.Link href='/cart'><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></Nav.Link>
+                                        <Nav.Link href='/cart'><FontAwesomeIcon icon={faShoppingCart} className='text-success'></FontAwesomeIcon></Nav.Link>
                                         <NavDropdown title="Username" id='basic-nav-dropdown'>
                                             <NavDropdown.Item href='/history'>Riwayat Belanja</NavDropdown.Item>
                                             <hr />

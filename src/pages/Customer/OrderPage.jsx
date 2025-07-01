@@ -136,7 +136,7 @@ const OrderPage = () => {
                                             </Col>
                                         </Row>
 
-                                        <Button type='submit' variant='success' className='w-100'>Bayar Sekarang</Button>
+                                        <Button type='submit' variant='success' className='w-100 mt-3'>Bayar Sekarang</Button>
                                     </Card.Body>
                                 </Card>
                             </Col>

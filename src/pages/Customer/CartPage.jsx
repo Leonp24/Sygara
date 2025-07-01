@@ -8,6 +8,8 @@ import { Container, Row, Col, Card, Button, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
+import Swal from "sweetalert2";
+
 import imgEmptyCart from '../../assets/img-empty-cart.png';
 import imgProduct from '../../assets/img-semangka.png';
 
@@ -21,7 +23,23 @@ const CartPage = () => {
     }
 
     const handleRemoveItem = () => {
-        setIsCartEmpty(true);
+        Swal.fire({
+            title: "Yakin ingin hapus?",
+            text: "Anda bisa menambahkannya kembali di halaman produk.",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Ya, Hapus",
+            cancelButtonText: "Batal",
+            confirmButtonColor: "red",
+            customClass: {
+                confirmButton: "rounded-pill",
+                cancelButton: "rounded-pill"
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                setIsCartEmpty(true);
+            }
+        });
     }
 
     const handleBuyClick = () => {
@@ -40,44 +58,44 @@ const CartPage = () => {
                     {isCartEmpty ? (
                         <div className="text-center mt-5 mb-5">
                             <h4>Keranjang masih kosong :(, <Link to="/product" className="text-success">Ayo Belanja Sekarang!</Link></h4>
-                            <img src={imgEmptyCart} alt="" width="50%" />
+                            <img src={imgEmptyCart} alt="" />
                             <FooterComponent />
                         </div>
                     ) : (
                         <Row>
                             <Col lg={6}>
                                 <Card className="mb-3 rounded-5">
-                                    <Row>
+                                    <Row className="d-flex align-items-center">
                                         <Col md={4}>
                                             <img src={imgProduct} alt="" className="img-fluid rounded-5 border" />
                                         </Col>
 
                                         <Col md={8}>
-                                            <Card.Body className="p-4">
+                                            <Card.Body>
                                                 <Row>
                                                     <Col>
                                                         <h5 className="card-title">Semangka</h5>
                                                     </Col>
 
                                                     <Col className="d-flex justify-content-end">
-                                                        <h5 className="text-success">Rp. 15.000</h5>
+                                                        <h5 className="text-success">Rp 15.000</h5>
                                                     </Col>
                                                 </Row>
 
-                                                <Row>
-                                                    <Col lg={8}>
-                                                        <Form className="w-100 mt-3">
-                                                            <Form.Group className="mb-3">
-                                                                <Form.Label>Jumlah/kg</Form.Label>
+                                                <Form>
+                                                    <Row className="d-flex align-items-center">
+                                                        <Form.Label>Jumlah/kg</Form.Label>
+                                                        <Col lg={8}>
+                                                            <Form className="w-100">
                                                                 <Form.Control type="number" max={10} min={1} onChange={handleJumlahChange} value={jumlah} />
-                                                            </Form.Group>
-                                                        </Form>
-                                                    </Col>
+                                                            </Form>
+                                                        </Col>
 
-                                                    <Col lg={4} className="d-flex justify-content-end p-3">
-                                                        <Button variant="outline-danger" onClick={handleRemoveItem}><FontAwesomeIcon icon={faTrash} /></Button>
-                                                    </Col>
-                                                </Row>
+                                                        <Col lg={4} className="d-flex justify-content-end">
+                                                            <Button variant="outline-danger" onClick={handleRemoveItem}><FontAwesomeIcon icon={faTrash} /></Button>
+                                                        </Col>
+                                                    </Row>
+                                                </Form>
                                             </Card.Body>
                                         </Col>
                                     </Row>
